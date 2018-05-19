@@ -1,7 +1,9 @@
 {
-  "extends": ["standard", "prettier"],
-  "plugins": ["prettier"],
+  "extends": ["standard", "prettier", "prettier/react", "prettier/standard"],
+  "plugins": ["prettier", "react"],
   "rules": {
-    "prettier/prettier": "error"
+    "prettier/prettier": "error",
+    "react/jsx-uses-react": "error",
+    "react/jsx-uses-vars": "error"
   }
 }
