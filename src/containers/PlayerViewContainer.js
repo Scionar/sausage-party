@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import Card from '../components/Card';
 
-export default class ScreenContainer extends Component {
+export class PlayerViewContainer extends Component {
   render() {
     return (
-      <div className="screen-container">
-        <h1>This is a screen ontainer.</h1>
+      <div className="player-view-container">
+        <h1>This is a player view container.</h1>
         <Card />
       </div>
     );

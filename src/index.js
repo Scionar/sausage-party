@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ScreenContainer from './containers/ScreenContainer';
+import Routing from './Routing';
 import './main.scss';
 
-ReactDOM.render(<ScreenContainer />, document.getElementById('root'));
+ReactDOM.render(<Routing />, document.getElementById('root'));
