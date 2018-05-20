@@ -1,11 +1,14 @@
 const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: './screen-src/index.js',
+  entry: {
+    main: path.resolve(__dirname, 'src', 'index.js')
+  },
   output: {
-    filename: 'screen.js',
-    path: path.resolve(__dirname, 'public')
+    filename: '[name].js',
+    path: path.resolve(__dirname, 'dist')
   },
   module: {
     rules: [
@@ -22,5 +25,12 @@ module.exports = {
   },
   resolve: {
     extensions: ['.js', '.jsx']
-  }
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      title: 'Sausage party',
+      template: path.resolve(__dirname, 'views', 'default.html'),
+      filename: path.resolve(__dirname, 'dist', 'index.html')
+    })
+  ]
 };
