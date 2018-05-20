@@ -6,11 +6,9 @@ const port = process.env.PORT || 3000;
 const app = express();
 const server = http.Server(app);
 
-app.set('view engine', 'pug');
+app.use('/static', express.static('dist/static'));
 
-app.use('/static', express.static('public'));
-
-app.get('/', (req, res) => {
+app.get('*', (req, res) => {
   res.sendFile(path.resolve(__dirname, 'dist', 'index.html'));
 });
 

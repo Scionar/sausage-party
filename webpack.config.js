@@ -1,14 +1,14 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-module.exports = {
-  mode: 'development',
+const webpackConfig = {
+  mode: process.env.WEBPACK_SERVE ? 'development' : 'production',
   entry: {
     main: path.resolve(__dirname, 'src', 'index.js')
   },
   output: {
-    filename: '[name].js',
-    path: path.resolve(__dirname, 'dist')
+    filename: 'js/[name].js',
+    path: path.resolve(__dirname, 'dist', 'static')
   },
   module: {
     rules: [
@@ -34,3 +34,11 @@ module.exports = {
     })
   ]
 };
+
+if (process.env.WEBPACK_SERVE) {
+  webpackConfig.serve = {
+    content: 'dist'
+  };
+}
+
+module.exports = webpackConfig;
