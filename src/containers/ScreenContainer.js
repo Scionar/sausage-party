@@ -5,7 +5,8 @@ export default class ScreenContainer extends Component {
   render() {
     return (
       <div className="screen-container">
-        This is screen container. <Card />
+        <h1>This is a screen ontainer.</h1>
+        <Card />
       </div>
     );
   }
