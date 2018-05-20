@@ -1,6 +1,9 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-dom';
+import { init as initSocketClient } from './socket-client';
 import Routing from './Routing';
 import './main.scss';
 
-ReactDOM.render(<Routing />, document.getElementById('root'));
+initSocketClient();
+
+render(<Routing />, document.getElementById('root'));
