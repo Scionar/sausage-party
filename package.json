@@ -10,7 +10,7 @@
     "build-watch": "webpack --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
     "preadd": "npm run fix-prettier",
-    "precommit": "npm run lint",
+    "precommit": "npm run lint && npm run singel",
     "lint": "eslint .",
     "verify-prettier": "prettier --list-different \"src/**/*.{js,jsx,css,json}\"",
     "fix-prettier": "prettier --write \"./**/*.{js,jsx,scss,json}\"",
