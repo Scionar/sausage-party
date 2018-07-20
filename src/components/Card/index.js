@@ -1,6 +1,8 @@
 import React from 'react';
 import './Card.scss';
 
-const Card = () => <div className="card" />;
+const Card = ({ className, ...props }) => (
+  <div className={`card ${className}`} {...props} />
+);
 
 export default Card;

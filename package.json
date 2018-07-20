@@ -7,12 +7,14 @@
     "start": "node server.js",
     "start:dev": "webpack-serve",
     "build": "webpack",
+    "build-watch": "webpack --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
     "preadd": "npm run fix-prettier",
     "precommit": "npm run lint",
     "lint": "eslint .",
     "verify-prettier": "prettier --list-different \"src/**/*.{js,jsx,css,json}\"",
-    "fix-prettier": "prettier --write \"./**/*.{js,jsx,scss,json}\""
+    "fix-prettier": "prettier --write \"./**/*.{js,jsx,scss,json}\"",
+    "singel": "singel src/components/*/index.js"
   },
   "author": "Joona Viertola",
   "license": "GPL-3.0",
@@ -20,8 +22,10 @@
     "express": "^4.16.3",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
+    "react-redux": "^5.0.7",
     "react-router": "^4.2.0",
     "react-router-dom": "^4.2.2",
+    "redux": "^4.0.0",
     "socket.io": "^2.1.1",
     "socket.io-client": "^2.1.1"
   },

@@ -1,4 +1,5 @@
 const socketIO = require('socket.io');
+const store = require('./serverStore');
 
 const state = {
   webSocket: null
@@ -31,9 +32,16 @@ module.exports.create = server => {
       console.log('Socket event: disconnect');
     });
 
+    /**
+     * Client emits this when connecting to WebSocket.
+     */
+    socket.on('get_state', fn => {
+      const state = store.getState();
+      socket.emit('update_state', { state });
+    });
+
     socket.on('action', (action, fn) => {
-      console.log('Socket event: action');
-      console.log(action, 'action');
+      console.log('Socket event: action', action);
       fn();
       // Todo: Put here data check and dispatch it for Redux store.
     });

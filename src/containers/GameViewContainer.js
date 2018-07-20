@@ -1,15 +1,23 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import Card from '../components/Card';
+import { connect } from 'react-redux';
+import { Deck } from '../components';
 
-export class GameViewContainer extends Component {
+class GameViewContainer extends Component {
   render() {
-    return (
-      <div className="game-view-container">
-        <h1>This is a game view container.</h1>
-        <Link to="/player">Link to player</Link>
-        <Card />
-      </div>
-    );
+    if (this.props.gameState === 'waiting_players') {
+      return <div>Waiting players</div>;
+    }
+
+    if (this.props.gameState === 'game_on') {
+      return <Deck />;
+    }
+
+    return null;
   }
 }
+
+const mapStateToProps = state => ({
+  gameState: state.gameState
+});
+
+export default connect(mapStateToProps)(GameViewContainer);
