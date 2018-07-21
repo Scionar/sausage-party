@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import { Deck } from '../components';
+import { Deck } from 'components';
 
-export class PlayerViewContainer extends Component {
+class PlayerViewContainer extends Component {
   render() {
     return (
       <div className="player-view-container">
@@ -11,3 +11,5 @@ export class PlayerViewContainer extends Component {
     );
   }
 }
+
+export default PlayerViewContainer;
